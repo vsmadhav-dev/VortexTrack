@@ -14,7 +14,6 @@ VortexTrack helps users organize tasks, track habits, and monitor their progress
 - CSS
 - JavaScript
 - Python
-- SQLite
 
 ## Status
 

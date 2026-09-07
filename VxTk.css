@@ -138,3 +138,66 @@ header div:last-of-type img {
     width: auto;
     transform: rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
 }
+
+
+
+#pre-account {
+    width: 100%;
+    height: calc(100% - 350px);
+    min-height: 330px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        to bottom,
+        #35463a,
+        #1b4d3e 35%,
+        #285c49
+    );
+}
+button#start {
+    width: min(72%, 520px);
+
+    padding: 22px 45px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 22px;
+
+    background: linear-gradient(
+        120deg,
+        #b7a91b,
+        #32a842 48%,
+        #26973a 60%,
+        #b7a91b
+    );
+
+    color: white;
+
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+}
+button#start:hover {
+    transform: translateY(-4px) scale(1.015);
+    filter: brightness(1.06);
+
+    box-shadow:
+        0 18px 38px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+}
+button#start:active {
+    transform: translateY(-1px) scale(.99);
+}
