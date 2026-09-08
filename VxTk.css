@@ -201,3 +201,72 @@ button#start:hover {
 button#start:active {
     transform: translateY(-1px) scale(.99);
 }
+
+
+
+#is-account {
+
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: whitesmoke;
+}
+
+
+.progress-wrap {
+    width: 80%;
+    margin: 20px auto;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.progress-wrap::before {
+    content: var(--start);
+}
+.progress-wrap::after {
+    content: var(--end);
+}
+#progress-bar {
+    flex: 1;
+    background: #D3D3D3;
+    height: 20px;
+
+    overflow: hidden;
+    border-radius: 10px;
+
+    position: relative;
+}
+#progress-bar .progress {
+    width: var(--progress-bar);
+    background: linear-gradient(to right, #b41010, #b410107c);
+    height: 100%;
+
+    transition: width 0.3s ease-in-out;
+}
+#progress-bar .progress:hover {
+    box-shadow: inset 0px 0px 27px #3eb410c4;
+}
+.progress-wrap {
+    --color: #000;
+}
+.progress-wrap:has(.progress:hover) {
+    --color: #3eb410;
+}
+#progress-bar::after {
+    content: var(--current);
+    position: absolute;
+
+    left: var(--progress-bar);
+    margin-left: 8px;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--color);
+}
+.progress-wrap::before,
+.progress-wrap::after {
+    color: var(--color);
+}
