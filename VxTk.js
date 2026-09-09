@@ -3,7 +3,7 @@ console.log("🚀 VortexTrack Core Engine: Online & Connected!");
 
 let habits = [];
 
-
+/* !    It was giving an error
 const habitForm = document.querySelector("#habit-form");
 const habitInput = document.querySelector("#habit-input");
 
@@ -37,3 +37,21 @@ habitForm.addEventListener("submit", function(event) {
         alert(`Engine captured: "${newHabit.name}" successfully!`);
     }
 });
+*/
+
+// Add something to check if the account exists—meaning we need to save at least a name or username.
+// If it exists, set `display: block;` for `#is-account` and `display: none;` for `#pre-account`; otherwise, do nothing.
+
+// for test:
+document.querySelector("#is-account").style.display = "block";
+document.querySelector("#pre-account").style.display = "none";
+
+
+// and something that passes the CSS variable `--current` to `--progress-bar`, a draft: 
+const bar = document.querySelector(".progress-wrap");
+
+const progress = getComputedStyle(bar)
+    .getPropertyValue("--progress-bar")
+    .trim();
+
+bar.style.setProperty("--current", `"${progress}"`);
