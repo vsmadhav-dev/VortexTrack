@@ -8,6 +8,7 @@ const habitForm = document.querySelector("#habit-form");
 const habitInput = document.querySelector("#habit-input");
 
 
+
 habitForm.addEventListener("submit", function(event) {
     
     event.preventDefault(); 
