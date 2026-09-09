@@ -15,6 +15,17 @@ body {
 html, body {
     height: 100%;
 }
+input {
+  border: none; 
+
+  outline: none; 
+}
+button {
+  border: none; 
+
+  outline: none; 
+}
+
 
 
 
@@ -31,6 +42,8 @@ nav {
     height: 60px;
 
     box-shadow: 0px 1px 6px rgba(48, 48, 48, 0.171);
+
+    z-index: 1000;
 }
 nav {
     display: flex;
@@ -269,4 +282,92 @@ button#start:active {
 .progress-wrap::before,
 .progress-wrap::after {
     color: var(--color);
+}
+
+
+
+
+
+#center {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+
+#habit-input {
+    width: 95%;
+    height: 250px;
+
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+    gap: 0px;
+
+    background: linear-gradient(135deg, #b41010 0%, #afafaf38 23%, #afafaf38 75%, #b47210 98%);
+
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 35px;
+}
+#habit-input div {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+#habit-input div:first-of-type {
+    align-items: flex-start;
+
+    padding-left: clamp(10px, 20%, 65px);
+}
+
+#new-habit-input {
+    width: clamp(100px, 80%, 1000px);
+    padding: 10px 15px;
+
+    font-size: 1.2rem;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(to right, white, transparent)
+        left / 0% 100% no-repeat;
+
+    transition:
+        background-size 0.7s ease,
+        color .5s ease;
+}
+#new-habit-input:focus {
+    background-size: 100% 100%;
+}
+#new-habit-input:not(:focus)::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+#add-btn {
+    width: clamp(50px, 40%, 500px);
+    padding: 10px 15px;
+
+    font-size: 1.2rem;
+
+    border-radius: 15px;
+
+    background: linear-gradient(to left, rgb(210, 243, 148), transparent);
+}
+#add-btn:active {
+    box-shadow: 0px 0px 10px #b47210, inset 0px 0px 3px #b47210;
 }

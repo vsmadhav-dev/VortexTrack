@@ -1,12 +1,9 @@
-// I wrote this as sample code because you haven’t used any IDs or classes in index.html, and I don’t want to add them since they could alter your CSS design. I don’t want to interfere with that part. Please add some IDs and create a form document that can generate a form and its inputs; with a few IDs, this code will work.
 console.log("🚀 VortexTrack Core Engine: Online & Connected!");
 
 let habits = [];
 
 
 
-// Add something to check if the account exists—meaning we need to save at least a name or username.
-// If it exists, set `display: block;` for `#is-account` and `display: none;` for `#pre-account`; otherwise, do nothing.
 
 function checkAccountExists() {
 
@@ -32,20 +29,31 @@ function checkAccountExists() {
     }
 }
 
-// Fire the check immediately when the webpage loads up
 checkAccountExists();
 
 // for test:
 document.querySelector("#is-account").style.display = "block";
 document.querySelector("#pre-account").style.display = "none";
+// for test ^^
 
 
-// and something that passes the CSS variable `--current` to `--progress-bar`, a draft: 
-const bar = document.querySelector(".progress-wrap");
+function updateBar(valBar) {
+    const bar = document.querySelector(".progress-wrap");
 
-if (bar) {
-    const progress = getComputedStyle(bar).getPropertyValue("--current").trim();
+    if (bar) {
+        // Numero CSS → width: 50%
+        bar.style.setProperty("--progress-bar", valBar + "%");
 
-
-    bar.style.setProperty("--progress-bar", progress);
+        // Stringa CSS → content: '50%'
+        bar.style.setProperty("--current", "'" + valBar + "%'");
+    }
 }
+
+// Have him draw the real number
+updateBar(50);
+
+
+
+// The `#list-all-habit` element should contain the first 3 habits—sorted however you like and styled nicely (I might add the styling myself later)—using `innerHTML`.
+
+// see what else there is to do
