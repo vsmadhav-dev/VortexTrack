@@ -3,44 +3,37 @@ console.log("🚀 VortexTrack Core Engine: Online & Connected!");
 
 let habits = [];
 
-/* !    It was giving an error
-const habitForm = document.querySelector("#habit-form");
-const habitInput = document.querySelector("#habit-input");
 
-
-
-habitForm.addEventListener("submit", function(event) {
-    
-    event.preventDefault(); 
-    
-    
-    let habitText = habitInput.value.trim();
-    
-    if (habitText !== "") {
-     
-        let newHabit = {
-            id: Date.now(), 
-            name: habitText,
-            completed: false
-        };
-        
-
-        habits.push(newHabit);
-        
-        
-        habitInput.value = "";
-        
-      
-        console.log("✅ Success! Current Habits Array Data:", habits);
-        
-
-        alert(`Engine captured: "${newHabit.name}" successfully!`);
-    }
-});
-*/
 
 // Add something to check if the account exists—meaning we need to save at least a name or username.
 // If it exists, set `display: block;` for `#is-account` and `display: none;` for `#pre-account`; otherwise, do nothing.
+
+function checkAccountExists() {
+
+    const savedUser = localStorage.getItem("vortextrack_username");
+
+
+    const isAccountDiv = document.querySelector("#is-account");
+    const preAccountDiv = document.querySelector("#pre-account");
+
+
+    if (savedUser && savedUser.trim() !== "") {
+        console.log(`🔐 Account verified! Welcome back, ${savedUser}.`);
+
+        isAccountDiv.style.display = "block";
+        preAccountDiv.style.display = "none";
+
+        return true;
+    } else {
+        console.log("🔓 No active account found. Displaying creation prompt.");
+
+
+        return false;
+    }
+}
+
+// Fire the check immediately when the webpage loads up
+checkAccountExists();
 
 // for test:
 document.querySelector("#is-account").style.display = "block";
@@ -50,8 +43,9 @@ document.querySelector("#pre-account").style.display = "none";
 // and something that passes the CSS variable `--current` to `--progress-bar`, a draft: 
 const bar = document.querySelector(".progress-wrap");
 
-const progress = getComputedStyle(bar)
-    .getPropertyValue("--progress-bar")
-    .trim();
+if (bar) {
+    const progress = getComputedStyle(bar).getPropertyValue("--current").trim();
 
-bar.style.setProperty("--current", `"${progress}"`);
+
+    bar.style.setProperty("--progress-bar", progress);
+}
