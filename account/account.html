@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - VortexTrack</title>
+    <link rel="icon" type="image/x-icon" href="../VortexTrack-main/logo.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(
+                    145deg,
+                    #35463a 0%,
+                    #1b4d3e 46%,
+                    #285c49 100%
+                );
+            color: #333;
+            line-height: 1.6;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+            font: inherit;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: linear-gradient(to right, #b41010c2, #b41010);
+            color: white;
+
+            box-shadow: 0 1px 6px rgba(48, 48, 48, 0.171);
+        }
+
+        nav > div:first-child {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav ul a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul a:hover {
+            opacity: .78;
+        }
+
+        nav > div:last-child {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 45px;
+            width: auto;
+            display: block;
+        }
+
+        .account-shell {
+            min-height: 100vh;
+            padding: 110px 24px 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .account-card {
+            width: min(980px, 100%);
+
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 34px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(180, 16, 16, 0.93),
+                    rgba(126, 9, 9, 0.96) 44%,
+                    rgba(180, 114, 16, 0.92)
+                );
+
+            box-shadow:
+                0 28px 70px rgba(0, 0, 0, 0.28),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .account-copy {
+            min-height: 540px;
+            padding: 52px 46px;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .account-copy::after {
+            content: "";
+            position: absolute;
+
+            right: 0;
+            top: 10%;
+            bottom: 10%;
+
+            width: 1px;
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .account-kicker {
+            margin-bottom: 12px;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+
+            opacity: 0.7;
+        }
+
+        .account-copy h1 {
+            max-width: 420px;
+
+            font-size: clamp(2.5rem, 5vw, 4.6rem);
+            line-height: 0.95;
+            letter-spacing: -3px;
+
+            margin-bottom: 24px;
+        }
+
+        .account-copy p {
+            max-width: 390px;
+
+            font-size: 1rem;
+            line-height: 1.75;
+
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .account-logo-wrap {
+            margin-top: 38px;
+
+            width: 84px;
+            height: 84px;
+
+            border-radius: 24px;
+            overflow: hidden;
+
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+        }
+
+        .account-logo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .account-form {
+            padding: 54px 48px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 21px;
+
+            background: rgba(255, 255, 255, 0.93);
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-field label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #5a1e19;
+        }
+
+        .form-field input {
+            width: 100%;
+            padding: 15px 16px;
+
+            border: 1px solid rgba(97, 28, 22, 0.15);
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.8);
+            color: #2c2c2c;
+
+            font-size: 1rem;
+
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease,
+                transform .2s ease;
+        }
+
+        .form-field input:focus {
+            border-color: #b41010;
+
+            box-shadow:
+                0 0 0 4px rgba(180, 16, 16, 0.08),
+                inset 0 1px 2px rgba(0, 0, 0, 0.04);
+
+            transform: translateY(-1px);
+        }
+
+        .form-field input::placeholder {
+            color: #9b918e;
+        }
+
+        .account-submit {
+            margin-top: 8px;
+
+            width: 100%;
+            padding: 16px 20px;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #b7a91b,
+                    #32a842 48%,
+                    #26973a 60%,
+                    #b7a91b
+                );
+
+            color: white;
+
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 26px rgba(34, 120, 52, 0.22),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+            transition:
+                transform .2s ease,
+                filter .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .account-submit:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+
+            box-shadow:
+                0 16px 32px rgba(34, 120, 52, 0.28),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .account-submit:active {
+            transform: translateY(0);
+        }
+
+        .account-note {
+            margin-top: -4px;
+            text-align: center;
+            color: #8a807d;
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 780px) {
+            nav ul {
+                display: none;
+            }
+
+            .account-shell {
+                padding: 90px 14px 30px;
+            }
+
+            .account-card {
+                grid-template-columns: 1fr;
+                border-radius: 25px;
+            }
+
+            .account-copy {
+                min-height: auto;
+                padding: 38px 30px 32px;
+            }
+
+            .account-copy::after {
+                display: none;
+            }
+
+            .account-copy h1 {
+                letter-spacing: -2px;
+            }
+
+            .account-logo-wrap {
+                margin-top: 28px;
+            }
+
+            .account-form {
+                padding: 34px 26px 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <h2>VortexTrack</h2>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="ecc.html">ecc..</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <a href="../VortexTrack-main/index.html" class="nav-logo">
+                <img src="../VortexTrack-main/logo.png" alt="VortexTrack Logo">
+            </a>
+        </div>
+    </nav>
+
+    <main class="account-shell">
+        <section class="account-card">
+
+            <div class="account-copy">
+                <span class="account-kicker">YOUR SPACE</span>
+
+                <h1>Create your account</h1>
+
+                <p>
+                    Add a few details before you start tracking your habits.
+                    You can always change them later.
+                </p>
+
+                <div class="account-logo-wrap">
+                    <img src="../VortexTrack-main/logo.png" alt="VortexTrack Logo">
+                </div>
+            </div>
+
+            <form id="account-form" class="account-form">
+
+                <div class="form-field">
+                    <label for="name">Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="nickname">Nickname</label>
+
+                    <input
+                        type="text"
+                        id="nickname"
+                        name="nickname"
+                        placeholder="How should VortexTrack call you?"
+                        autocomplete="nickname"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="account-submit">
+                    Continue
+                </button>
+
+                <p class="account-note">
+                    Your details are saved only in this browser for now.
+                </p>
+            </form>
+
+        </section>
+    </main>
+
+    <script>
+        const accountForm = document.querySelector("#account-form");
+
+        accountForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.querySelector("#name").value.trim();
+            const email = document.querySelector("#email").value.trim();
+            const nickname = document.querySelector("#nickname").value.trim();
+
+            if (!name || !email || !nickname) {
+                return;
+            }
+
+            const params = new URLSearchParams({
+                name: name,
+                email: email,
+                nickname: nickname
+            });
+
+            window.location.href = "../VortexTrack-main/index.html?" + params.toString();
+        });
+    </script>
+
+</body>
+</html>

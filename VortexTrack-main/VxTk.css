@@ -1,0 +1,373 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+
+    width: 100%;
+    min-height: 100vh;
+}
+html, body {
+    height: 100%;
+}
+input {
+  border: none; 
+
+  outline: none; 
+}
+button {
+  border: none; 
+
+  outline: none; 
+}
+
+
+
+
+nav {
+    background: linear-gradient(to right, #b41010c2, #b41010);
+    color: #fff;
+    padding: 10px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 60px;
+
+    box-shadow: 0px 1px 6px rgba(48, 48, 48, 0.171);
+
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+nav ul a {
+    color: white;
+    text-decoration: none;
+}
+
+nav > div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+.nav-logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+
+header {
+    background: linear-gradient(to right, #b41010 60%, #b47210);
+
+    color: #ffffff;
+    padding: 20px;
+
+    width: 100%;
+    height: 350px;
+
+    padding-top: 60px;
+
+    display: flex;
+    flex-direction: row;
+}
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+
+    transform: translateX(-10%);
+
+    background: rgba(92, 92, 92, 0.26);
+    padding: 10px;
+    border-radius: 20px;
+
+    box-shadow: 0px 1px 6px rgba(48, 48, 48, 0.171);
+}
+header div {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+}
+
+header div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header div:first-of-type p {
+    background: rgba(92, 92, 92, 0.600);
+    padding: 10px;
+    border-radius: 20px;
+
+    box-shadow: 0px 1px 6px rgba(48, 48, 48, 0.171);
+}
+header div:first-of-type span {
+    background: rgb(92, 92, 92, 0.850);
+    padding: 10px;
+    border-radius: 20px;
+
+    transform: translateX(23%);
+    margin-top: 23px;
+
+    box-shadow: 0px 1px 6px rgba(48, 48, 48, 0.171);
+}
+
+header div:last-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 1000px;
+}
+header div:last-of-type img {
+    height: 80%;
+    width: auto;
+    transform: rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
+}
+
+
+
+#pre-account {
+    width: 100%;
+    height: calc(100% - 350px);
+    min-height: 330px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        to bottom,
+        #35463a,
+        #1b4d3e 35%,
+        #285c49
+    );
+}
+button#start {
+    width: min(72%, 520px);
+
+    padding: 22px 45px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 22px;
+
+    background: linear-gradient(
+        120deg,
+        #b7a91b,
+        #32a842 48%,
+        #26973a 60%,
+        #b7a91b
+    );
+
+    color: white;
+
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+}
+button#start:hover {
+    transform: translateY(-4px) scale(1.015);
+    filter: brightness(1.06);
+
+    box-shadow:
+        0 18px 38px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+}
+button#start:active {
+    transform: translateY(-1px) scale(.99);
+}
+
+
+
+#is-account {
+
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: whitesmoke;
+}
+
+
+.progress-wrap {
+    width: 80%;
+    margin: 20px auto;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.progress-wrap::before {
+    content: var(--start);
+}
+.progress-wrap::after {
+    content: var(--end);
+}
+#progress-bar {
+    flex: 1;
+    background: #D3D3D3;
+    height: 20px;
+
+    overflow: hidden;
+    border-radius: 10px;
+
+    position: relative;
+}
+#progress-bar .progress {
+    width: var(--progress-bar);
+    background: linear-gradient(to right, #b41010, #b410107c);
+    height: 100%;
+
+    transition: width 0.3s ease-in-out;
+}
+#progress-bar .progress:hover {
+    box-shadow: inset 0px 0px 27px #3eb410c4;
+}
+.progress-wrap {
+    --color: #000;
+}
+.progress-wrap:has(.progress:hover) {
+    --color: #3eb410;
+}
+#progress-bar::after {
+    content: var(--current);
+    position: absolute;
+
+    left: var(--progress-bar);
+    margin-left: 8px;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--color);
+}
+.progress-wrap::before,
+.progress-wrap::after {
+    color: var(--color);
+}
+
+
+
+
+
+#center {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+
+#habit-input {
+    width: 95%;
+    height: 250px;
+
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+    gap: 0px;
+
+    background: linear-gradient(135deg, #b41010 0%, #afafaf38 23%, #afafaf38 75%, #b47210 98%);
+
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 35px;
+}
+#habit-input div {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+#habit-input div:first-of-type {
+    align-items: flex-start;
+
+    padding-left: clamp(10px, 20%, 65px);
+}
+
+#new-habit-input {
+    width: clamp(100px, 80%, 1000px);
+    padding: 10px 15px;
+
+    font-size: 1.2rem;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(to right, white, transparent)
+        left / 0% 100% no-repeat;
+
+    transition:
+        background-size 0.7s ease,
+        color .5s ease;
+}
+#new-habit-input:focus {
+    background-size: 100% 100%;
+}
+#new-habit-input:not(:focus)::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+#add-btn {
+    width: clamp(50px, 40%, 500px);
+    padding: 10px 15px;
+
+    font-size: 1.2rem;
+
+    border-radius: 15px;
+
+    background: linear-gradient(to left, rgb(210, 243, 148), transparent);
+}
+#add-btn:active {
+    box-shadow: 0px 0px 10px #b47210, inset 0px 0px 3px #b47210;
+}
