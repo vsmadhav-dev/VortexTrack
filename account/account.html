@@ -444,26 +444,49 @@
     </main>
 
     <script>
-        const accountForm = document.querySelector("#account-form");
+        document.addEventListener("DOMContentLoaded", () => {
+            const accountForm = document.querySelector("#account-form");
 
-        accountForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+            accountForm.addEventListener("submit", function (event) {
+                event.preventDefault();
 
-            const name = document.querySelector("#name").value.trim();
-            const email = document.querySelector("#email").value.trim();
-            const nickname = document.querySelector("#nickname").value.trim();
+                const name = document.querySelector("#name").value.trim();
+                const email = document.querySelector("#email").value.trim().toLowerCase();
+                const nickname = document.querySelector("#nickname").value.trim();
 
-            if (!name || !email || !nickname) {
-                return;
-            }
+                if (!name || !email || !nickname) {
+                    alert("Please fill in all fields.");
+                    return;
+                }
 
-            const params = new URLSearchParams({
-                name: name,
-                email: email,
-                nickname: nickname
+                let users = JSON.parse(localStorage.getItem("vortextrack_users")) || [];
+
+                let existingUser = users.find(u => u.email === email);
+
+                if (existingUser) {
+
+                    alert(`Welcome back, ${existingUser.nickname || existingUser.name}! Directing to your habits...`);
+                    localStorage.setItem("currentUser", JSON.stringify(existingUser));
+                } else {
+
+                    const newUser = {
+                        name: name,
+                        email: email,
+                        nickname: nickname,
+                        createdAt: new Date().toISOString()
+                    };
+
+
+                    users.push(newUser);
+                    localStorage.setItem("vortextrack_users", JSON.stringify(users));
+                    localStorage.setItem("currentUser", JSON.stringify(newUser));
+
+                    alert("Account created successfully!");
+                }
+
+
+                window.location.href = "habits.html";
             });
-
-            window.location.href = "../VortexTrack-main/index.html?" + params.toString();
         });
     </script>
 
