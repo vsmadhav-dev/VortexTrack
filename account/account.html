@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Create Account - VortexTrack</title>
+    <!-- Stepping out of 'account' folder, then into 'VortexTrack-main' for logo -->
     <link rel="icon" type="image/x-icon" href="../VortexTrack-main/logo.png">
 
     <style>
@@ -366,6 +367,7 @@
     </div>
 
     <div>
+        <!-- Path to index.html in sibling folder -->
         <a href="../VortexTrack-main/index.html" class="nav-logo">
             <img src="../VortexTrack-main/logo.png" alt="VortexTrack Logo">
         </a>
@@ -386,6 +388,7 @@
             </p>
 
             <div class="account-logo-wrap">
+                <!-- Path to logo in sibling folder -->
                 <img src="../VortexTrack-main/logo.png" alt="VortexTrack Logo">
             </div>
         </div>
@@ -485,8 +488,8 @@
             // Sync key for VxTk.js checkAccountExists()
             localStorage.setItem("vortextrack_username", activeDisplayName);
 
-            // Redirect to main index page
-            window.location.href = "../index.html";
+            // Redirect: Up out of 'account' folder, then down into 'VortexTrack-main/index.html'
+            window.location.href = "../VortexTrack-main/index.html";
         });
     });
 </script>
