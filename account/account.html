@@ -21,12 +21,12 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background:
-                linear-gradient(
-                    145deg,
-                    #35463a 0%,
-                    #1b4d3e 46%,
-                    #285c49 100%
-                );
+                    linear-gradient(
+                            145deg,
+                            #35463a 0%,
+                            #1b4d3e 46%,
+                            #285c49 100%
+                    );
             color: #333;
             line-height: 1.6;
         }
@@ -118,16 +118,16 @@
             border-radius: 34px;
 
             background:
-                linear-gradient(
-                    135deg,
-                    rgba(180, 16, 16, 0.93),
-                    rgba(126, 9, 9, 0.96) 44%,
-                    rgba(180, 114, 16, 0.92)
-                );
+                    linear-gradient(
+                            135deg,
+                            rgba(180, 16, 16, 0.93),
+                            rgba(126, 9, 9, 0.96) 44%,
+                            rgba(180, 114, 16, 0.92)
+                    );
 
             box-shadow:
-                0 28px 70px rgba(0, 0, 0, 0.28),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+                    0 28px 70px rgba(0, 0, 0, 0.28),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
 
         .account-copy {
@@ -241,17 +241,17 @@
             box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
 
             transition:
-                border-color .2s ease,
-                box-shadow .2s ease,
-                transform .2s ease;
+                    border-color .2s ease,
+                    box-shadow .2s ease,
+                    transform .2s ease;
         }
 
         .form-field input:focus {
             border-color: #b41010;
 
             box-shadow:
-                0 0 0 4px rgba(180, 16, 16, 0.08),
-                inset 0 1px 2px rgba(0, 0, 0, 0.04);
+                    0 0 0 4px rgba(180, 16, 16, 0.08),
+                    inset 0 1px 2px rgba(0, 0, 0, 0.04);
 
             transform: translateY(-1px);
         }
@@ -269,13 +269,13 @@
             border-radius: 16px;
 
             background:
-                linear-gradient(
-                    120deg,
-                    #b7a91b,
-                    #32a842 48%,
-                    #26973a 60%,
-                    #b7a91b
-                );
+                    linear-gradient(
+                            120deg,
+                            #b7a91b,
+                            #32a842 48%,
+                            #26973a 60%,
+                            #b7a91b
+                    );
 
             color: white;
 
@@ -286,13 +286,13 @@
             cursor: pointer;
 
             box-shadow:
-                0 12px 26px rgba(34, 120, 52, 0.22),
-                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+                    0 12px 26px rgba(34, 120, 52, 0.22),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
             transition:
-                transform .2s ease,
-                filter .2s ease,
-                box-shadow .2s ease;
+                    transform .2s ease,
+                    filter .2s ease,
+                    box-shadow .2s ease;
         }
 
         .account-submit:hover {
@@ -300,8 +300,8 @@
             filter: brightness(1.05);
 
             box-shadow:
-                0 16px 32px rgba(34, 120, 52, 0.28),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                    0 16px 32px rgba(34, 120, 52, 0.28),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
         .account-submit:active {
@@ -355,140 +355,141 @@
 
 <body>
 
-    <nav>
-        <div>
-            <h2>VortexTrack</h2>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="ecc.html">ecc..</a></li>
-            </ul>
-        </div>
+<nav>
+    <div>
+        <h2>VortexTrack</h2>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="ecc.html">ecc..</a></li>
+        </ul>
+    </div>
 
-        <div>
-            <a href="../VortexTrack-main/index.html" class="nav-logo">
+    <div>
+        <a href="../VortexTrack-main/index.html" class="nav-logo">
+            <img src="../VortexTrack-main/logo.png" alt="VortexTrack Logo">
+        </a>
+    </div>
+</nav>
+
+<main class="account-shell">
+    <section class="account-card">
+
+        <div class="account-copy">
+            <span class="account-kicker">YOUR SPACE</span>
+
+            <h1>Create your account</h1>
+
+            <p>
+                Add a few details before you start tracking your habits.
+                You can always change them later.
+            </p>
+
+            <div class="account-logo-wrap">
                 <img src="../VortexTrack-main/logo.png" alt="VortexTrack Logo">
-            </a>
-        </div>
-    </nav>
-
-    <main class="account-shell">
-        <section class="account-card">
-
-            <div class="account-copy">
-                <span class="account-kicker">YOUR SPACE</span>
-
-                <h1>Create your account</h1>
-
-                <p>
-                    Add a few details before you start tracking your habits.
-                    You can always change them later.
-                </p>
-
-                <div class="account-logo-wrap">
-                    <img src="../VortexTrack-main/logo.png" alt="VortexTrack Logo">
-                </div>
             </div>
+        </div>
 
-            <form id="account-form" class="account-form">
+        <form id="account-form" class="account-form">
 
-                <div class="form-field">
-                    <label for="name">Name</label>
+            <div class="form-field">
+                <label for="name">Name</label>
 
-                    <input
+                <input
                         type="text"
                         id="name"
                         name="name"
                         placeholder="Your name"
                         autocomplete="name"
                         required
-                    >
-                </div>
+                >
+            </div>
 
-                <div class="form-field">
-                    <label for="email">Email</label>
+            <div class="form-field">
+                <label for="email">Email</label>
 
-                    <input
+                <input
                         type="email"
                         id="email"
                         name="email"
                         placeholder="you@example.com"
                         autocomplete="email"
                         required
-                    >
-                </div>
+                >
+            </div>
 
-                <div class="form-field">
-                    <label for="nickname">Nickname</label>
+            <div class="form-field">
+                <label for="nickname">Nickname</label>
 
-                    <input
+                <input
                         type="text"
                         id="nickname"
                         name="nickname"
                         placeholder="How should VortexTrack call you?"
                         autocomplete="nickname"
                         required
-                    >
-                </div>
+                >
+            </div>
 
-                <button type="submit" class="account-submit">
-                    Continue
-                </button>
+            <button type="submit" class="account-submit">
+                Continue
+            </button>
 
-                <p class="account-note">
-                    Your details are saved only in this browser for now.
-                </p>
-            </form>
+            <p class="account-note">
+                Your details are saved only in this browser for now.
+            </p>
+        </form>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const accountForm = document.querySelector("#account-form");
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const accountForm = document.querySelector("#account-form");
 
-            accountForm.addEventListener("submit", function (event) {
-                event.preventDefault();
+        accountForm.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-                const name = document.querySelector("#name").value.trim();
-                const email = document.querySelector("#email").value.trim().toLowerCase();
-                const nickname = document.querySelector("#nickname").value.trim();
+            const name = document.querySelector("#name").value.trim();
+            const email = document.querySelector("#email").value.trim().toLowerCase();
+            const nickname = document.querySelector("#nickname").value.trim();
 
-                if (!name || !email || !nickname) {
-                    alert("Please fill in all fields.");
-                    return;
-                }
+            if (!name || !email || !nickname) {
+                alert("Please fill in all fields.");
+                return;
+            }
 
-                let users = JSON.parse(localStorage.getItem("vortextrack_users")) || [];
+            let users = JSON.parse(localStorage.getItem("vortextrack_users")) || [];
+            let existingUser = users.find(u => u.email === email);
 
-                let existingUser = users.find(u => u.email === email);
+            const activeDisplayName = nickname || name;
 
-                if (existingUser) {
+            if (existingUser) {
+                alert(`Welcome back, ${existingUser.nickname || existingUser.name}! Directing to your habits...`);
+                localStorage.setItem("currentUser", JSON.stringify(existingUser));
+            } else {
+                const newUser = {
+                    name: name,
+                    email: email,
+                    nickname: nickname,
+                    createdAt: new Date().toISOString()
+                };
 
-                    alert(`Welcome back, ${existingUser.nickname || existingUser.name}! Directing to your habits...`);
-                    localStorage.setItem("currentUser", JSON.stringify(existingUser));
-                } else {
+                users.push(newUser);
+                localStorage.setItem("vortextrack_users", JSON.stringify(users));
+                localStorage.setItem("currentUser", JSON.stringify(newUser));
 
-                    const newUser = {
-                        name: name,
-                        email: email,
-                        nickname: nickname,
-                        createdAt: new Date().toISOString()
-                    };
+                alert("Account created successfully!");
+            }
 
+            // Sync key for VxTk.js checkAccountExists()
+            localStorage.setItem("vortextrack_username", activeDisplayName);
 
-                    users.push(newUser);
-                    localStorage.setItem("vortextrack_users", JSON.stringify(users));
-                    localStorage.setItem("currentUser", JSON.stringify(newUser));
-
-                    alert("Account created successfully!");
-                }
-
-
-                window.location.href = "habits.html";
-            });
+            // Redirect to main index page
+            window.location.href = "../index.html";
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
